@@ -50,4 +50,3 @@ square.style.height = "250px";
 square.style.backgroundColor = "white";
 square.append(button);
 document.body.append(square);
-
