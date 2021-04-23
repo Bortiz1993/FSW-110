@@ -3,21 +3,31 @@
     <head>
         <title>Using other types</title>
     </head>
-<body>
+<body id="body">
     
-    <form onsubmit="submitForm(event)" id="my-form">
-        <label for="Name">Your first name:</label>
-        <input type="text" id="Name" name="Name" required placeholder="Your name please!"><br>
+    <form onsubmit="submitForm(event)" id="myform">
+        <h2 id="h2">My Form Pause and Practice.</h2>
+        <label or="Name">Your first name:</label>
+        <input type="text" id="Name" name="Name" required placeholder="Your name please!"><br><br>
         <label for="lastName">Your last name:</label>
-        <input type="text" id="lastName" name="lastName"  required placeholder="Your last name please"><br>
-        <label for="age">Your age:</label>
-        <input type="number" id="age" name="age" required placeholder="Your age please"><br>
-        <label for="question">Have you been here before?</label>
-    yes <input type="radio" id="question" name="question" placeholder="Your answer">
-        <label for="question2">Have you been here before?</label>
-     no  <input type="radio" id="question2" name="question2" placeholder="Your answer"><br>
-
+        <input type="text" id="lastName" name="lastName"  required placeholder="Your last name please"><br><br>
+        <label  for="age">Your age:</label>
+        <input type="number" id="age" name="age" required placeholder="Your age please"><br><br>
+        <label  for="question">Have you been here before?</label>
+    yes <input type="radio" id="question" name="question" placeholder="Your answer" value="yes">
+     no  <input type="radio" id="question2" name="question" placeholder="Your answer" value="no"><br><br>
+        <label  for="dropdown">Where are you from?</label>
+        <select name="dropdown">
+            <option value="USA">USA</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Argentina">Argentina</option>
+         </select> <br><br>
+         <label for="checkbox">Which one do you prefer?.</label>
+         <input type="checkbox" id="checkbox1" name="checkbox1" value="Car">Car
+         <input type="checkbox" id="checkbox2" name="checkbox2" value="Motorcycle">Motorcycle
+         <input type="checkbox" id="checkbox3" name="checkbox3" value="Plane">Plane<br>
     
+
         <button>submit</button>
     </form>
 <script src="index_other.js"></script>
