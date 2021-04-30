@@ -1,30 +1,34 @@
   //This if statement is to make sure the document is already loaded before we access different parts of the document.
 if (document.readyState == 'loading') {
-    document.addEventListener('DOMContentLoaded', mainFunction)
+    document.addEventListener('DOMContentLoaded', mainFunction);
 } else {
     mainFunction()
 }
 //set up for all events listeners
+
+//main function of my coffee shop
+//clear buttons input
 function mainFunction() {
-    var removeItemButtons = document.getElementsByClassName('clear-button')
+    var removeItemButtons = document.getElementsByClassName('clear-button');
     for (var i = 0; i < removeItemButtons.length; i++) {
         var button = removeItemButtons[i]
-        button.addEventListener('click', removeItem)
+        button.addEventListener('click', removeItem);
     }
-
-    var quantityInputs = document.getElementsByClassName('quantity-input')
+    //Price inputs (quantity)
+    var quantityInputs = document.getElementsByClassName('quantity-input');
     for (var i = 0; i < quantityInputs.length; i++) {
         var input = quantityInputs[i]
-        input.addEventListener('change', priceChanged)
+        input.addEventListener('change', priceChanged);
     }
-
-    var addButtons = document.getElementsByClassName('add-button')
+    //add button event listener
+    var addButtons = document.getElementsByClassName('add-button');
     for (var i = 0; i < addButtons.length; i++) {
         var button = addButtons[i]
-        button.addEventListener('click', addClicked)
+        button.addEventListener('click', addClicked);
     }
 
-    document.getElementsByClassName('buy-button')[0].addEventListener('click', buyClicked)
+//event listener for the buy button.
+    document.getElementsByClassName('buy-button')[0].addEventListener('click', buyClicked);
 }
 
 //set up for different events such as add items, remove items, and price change.
@@ -37,12 +41,14 @@ console.log("Thank you for your service!" )
     updateTotal()
 }
 
+//function to remove items.
 function removeItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateTotal()
 }
 
+//default value for the number input.
 function priceChanged(event) {
     var input = event.target
     if (isNaN(input.value) || input.value <= 0) {
@@ -50,7 +56,7 @@ function priceChanged(event) {
     }
     updateTotal()
 }
-
+//whenever the add button is clicked, a new item is added.
 function addClicked(event) {
     var button = event.target
     var Item2 = button.parentElement.parentElement
@@ -73,6 +79,7 @@ function addItem(title, price, image2) {
             return
         }
     }
+    //HTML elements can be added when creating a new element inside JavaScript.
     //if adding a new element, it needs to be hooked up since it was added after the initial code.
     var RowContents = `
         <div class="item-column">
@@ -84,12 +91,14 @@ function addItem(title, price, image2) {
             <input class="quantity-input" type="number" value="1">
             <button class="clear-button" type="button">Clear</button>
         </div>`
+    //hooking up div element to the document.
     mainRow.innerHTML = RowContents
     Items2.append(mainRow)
     mainRow.getElementsByClassName('clear-button')[0].addEventListener('click', removeItem)
     mainRow.getElementsByClassName('quantity-input')[0].addEventListener('change', priceChanged)
 }
 
+// function that makes sure the total price gets updated.
 function updateTotal() {
     var itemContainer = document.getElementsByClassName('main-items')[0]
     var Rows = itemContainer.getElementsByClassName('main-row')
@@ -98,12 +107,13 @@ function updateTotal() {
         var secondaryRow = Rows[i]
         var priceColumn = secondaryRow.getElementsByClassName('price-column')[0]
         var quantityInput = secondaryRow.getElementsByClassName('quantity-input')[0]
+        //parseFloat will turn any string into a number with decimals.
         var price = parseFloat(priceColumn.innerText.replace('$', ''))
         var quantity = quantityInput.value
         total = total + (price * quantity)
         console.log(price * quantity)
     }
-    //Used Math.round to round to the second decimal place.
+    //Used Math.round to round two decimal places and the total.
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('total-price')[0].innerText = '$' + total
     
