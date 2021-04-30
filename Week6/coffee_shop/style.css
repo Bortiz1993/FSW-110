@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(255, 203, 166);
+}
+#image1 {
+    background-image: url("coffe_Choco.jpg");
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    
+}
+#main-nav ul {
+    list-style-type: none;
+    padding-bottom: 15px;
+    padding-top: 25px;
+}
+#main ul, li {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+#main ul, li, a {
+    font-size: 24px;
+    font-family:sans-serif;
+    text-decoration: none;
+    color: lavender;
+    transition: 0.8s ease;
+    background-color: chocolate;
+    background:linear-gradient(to right, rgb(210, 105, 30), rgb(252, 188, 143));
+}
+
+#main ul, li, a:hover {
+color: chocolate;  
+}
+#main a{  
+    border-style: none;
+    border-spacing: 50px;
+}
+h1 {
+    text-align-last: center;
+    font-family: Pacifico;
+}
+h3 {
+    text-align-last: center;
+    font-family: Pacifico;
+}
+h2 {
+    text-align:center;
+    font-family:sans-serif;
+}
+.mycontent-section{
+    margin: 1em;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 1.5em;
+  
+}
+.tiny-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#myfooter{                 
+padding-bottom: 1px;
+padding-top: 1px;
+}
+
+#myfooter a {
+ font-size: 15px;
+border-spacing: 10px;
+}
+/* for mobile*/
+ @media only screen and (min-width: 360px) and (max-width: 720px){
+#image1{
+    height: 80vh;
+}
+.container{
+    padding-top: 10px;
+}
+
+body {
+    font-size: 20px;
+    display: inline-table;
+}
+ 
+ #myfooter{
+     padding-top: 150px;
+ }
+}
