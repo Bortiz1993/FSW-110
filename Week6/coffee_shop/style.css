@@ -8,7 +8,7 @@ body{
 }
 #image1 {
     background-image: url("coffe_Choco.jpg");
-    height: 100px;
+    height: 25vh;
     background-size: cover;
     background-position: center;
     
@@ -16,7 +16,6 @@ body{
 #main-nav ul {
     list-style-type: none;
     padding-bottom: 15px;
-    padding-top: 25px;
 }
 #main ul, li {
     display: flex;
