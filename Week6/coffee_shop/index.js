@@ -30,7 +30,7 @@ function mainFunction() {
 //event listener for the buy button.
     document.getElementsByClassName('buy-button')[0].addEventListener('click', buyClicked);
 }
-
+//event handlers
 //set up for different events such as add items, remove items, and price change.
 function buyClicked() {
 console.log("Thank you for your service!" )
@@ -40,14 +40,14 @@ console.log("Thank you for your service!" )
     }
     updateTotal()
 }
-
+//event handlers.
 //function to remove items.
 function removeItem(event) {
     var buttonClicked = event.target
     buttonClicked.parentElement.parentElement.remove()
     updateTotal()
 }
-
+//event handler
 //default value for the number input.
 function priceChanged(event) {
     var input = event.target
@@ -56,6 +56,7 @@ function priceChanged(event) {
     }
     updateTotal()
 }
+//event handler
 //whenever the add button is clicked, a new item is added.
 function addClicked(event) {
     var button = event.target
@@ -67,6 +68,7 @@ function addClicked(event) {
     updateTotal()
     console.log(title,price,image1);
 }
+//event handler.
 //created a new div, appended to items.
 function addItem(title, price, image2) {
     var mainRow = document.createElement('div')
@@ -80,7 +82,7 @@ function addItem(title, price, image2) {
         }
     }
     //HTML elements can be added when creating a new element inside JavaScript.
-    //if adding a new element, it needs to be hooked up since it was added after the initial code.
+    //if adding a new element, it needs to be appended since it was added after the initial code.
     var RowContents = `
         <div class="item-column">
             <img class="item-image" src="${image2}" width="100" height="100">
@@ -107,7 +109,7 @@ function updateTotal() {
         var secondaryRow = Rows[i]
         var priceColumn = secondaryRow.getElementsByClassName('price-column')[0]
         var quantityInput = secondaryRow.getElementsByClassName('quantity-input')[0]
-        //parseFloat will turn any string into a number with decimals.
+        //parseFloat will turn a number string into a number with decimals.
         var price = parseFloat(priceColumn.innerText.replace('$', ''))
         var quantity = quantityInput.value
         total = total + (price * quantity)
