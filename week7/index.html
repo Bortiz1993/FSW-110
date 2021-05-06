@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:ital,wght@0,100;1,300;1,400&family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://kit.fontawesome.com/709d950945.js" crossorigin="anonymous"></script>
+    <script src="index.js" async></script>
+    <title>To-Do-List for DOM</title>
+</head>
+<body>
+    <form onsubmit="addList(event)" class="main-container">
+    <div class="add-todo">
+        
+        <label name='name'>My To-Do-List</label>
+        <input id="name-input" type="name" placeholder="User Name">
+        <input id="main-input"  type="text" placeholder="Add to-do">
+        <button>Add</button>
+    </div>
+    <div>
+        <ul class="not-completed">
+            <h3>Not completed</h3>
+    </ul>
+    </div>
+    <div>
+    <ul class="completed">
+        <h3>Completed</h3>
+    </ul>
+    </div>
+</form>
+  
+</body>
+</html>
+
